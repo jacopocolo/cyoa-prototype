@@ -48,6 +48,7 @@ card.states.add
 		scale: 1.0
 		
 cardDefault = () ->
+	card.draggable.enabled = false
 	card.states.switch("front")
 	top.states.switch("default")
 	left.states.switch("default")
@@ -88,6 +89,7 @@ card.on Events.DragMove, ->
 
 card.on Events.DragEnd, ->
 	if wasDragged == true
+	       wasDragged = false
 	       this.animate
 	        	properties:
 	            	x: 0
@@ -116,7 +118,6 @@ card.on Events.DragEnd, ->
             blockIndex = 0
             cardText = structure.story[storyIndex].block[blockIndex].text
           	card.html = cardText
-			wasDragged = false
 			
 ################################################
 # OPTIONS: TOP, RIGHT, BOTTOM, LEFT 

@@ -65,6 +65,7 @@
   });
 
   cardDefault = function() {
+    card.draggable.enabled = false;
     card.states["switch"]("front");
     top.states["switch"]("default");
     left.states["switch"]("default");
@@ -111,6 +112,7 @@
 
   card.on(Events.DragEnd, function() {
     if (wasDragged === true) {
+      wasDragged = false;
       this.animate({
         properties: {
           x: 0,
@@ -145,8 +147,7 @@
       blockIndex = 0;
       cardText = structure.story[storyIndex].block[blockIndex].text;
     }
-    card.html = cardText;
-    return wasDragged = false;
+    return card.html = cardText;
   });
 
   top = new Layer({
