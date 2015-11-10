@@ -20,7 +20,7 @@ structure = {"story": [{
     "options": {
         "top": {
             "text": "top ipsum",
-            "destination": 2
+            "destination": 4
         },
         "right": {
             "text": "right amet",

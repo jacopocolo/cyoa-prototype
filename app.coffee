@@ -31,6 +31,7 @@ card.html = cardText
 card.style =
     "display": "flex"
     "align-items": "center"
+    "width": "100%"
     "color": "rgba(0,0,0,0.7)"
     "padding": padding*2+"px"
     "font-size": "26px"
