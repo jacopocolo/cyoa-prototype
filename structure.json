@@ -1,0 +1,64 @@
+/*
+Structure
+	story
+		block
+			text
+			text
+			text
+			options
+*/
+
+structure = {"story": [{
+    "block": [
+    {"text": "1. Lorem ipsum dolor sit amet"},
+    {"text": ", consectetur adipiscing elit. "},
+    {"text": "Nullam "},
+    {"text": "scelerisque "},
+    {"text": "venenatis "},
+    {"text": "est ac efficitur?"}
+    ],
+    "options": {
+        "top": {
+            "text": "top ipsum",
+            "destination": 2
+        },
+        "right": {
+            "text": "right amet",
+            "destination": 1
+        },
+        "bottom": {
+            "text": "bottom dolor",
+            "destination": 2
+        },
+        "left": {
+            "text": "left quam",
+            "destination": 1
+        }
+    }
+  },
+{
+    "block": [
+    {"text": "2. Pellentesque efficitur varius commodo. "},
+    {"text": "Pellentesque rhoncus consectetur mi at viverra. "},
+    {"text": "Aliquam erat volutpat."}
+    ]
+  },
+{
+    "block": [
+    {"text": "3. Maecenas blandit nec ex eget suscipit. "},
+    {"text": "Donec gravida faucibus quam nec suscipit. "},
+    {"text": "Nulla "},
+	{"text": "sit "},
+	{"text": "amet "},
+	{"text": "dapibus "},
+	{"text": "sapien."}
+    ]
+  },
+    {
+    "block": [
+    {"text": "4. Nullam interdum orci quis. "},
+    {"text": "Mi eleifend, "},
+    {"text": "vel cursus eros."}
+    ]
+  }
+]}
