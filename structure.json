@@ -60,5 +60,10 @@ structure = {"story": [{
     {"text": "Mi eleifend, "},
     {"text": "vel cursus eros."}
     ]
-  }
+  },
+	{
+    "block": [
+    {"text": "A key:<br><img src='http://contentsmagazine.com/cards/key.jpg'>"}
+    ]
+  },
 ]}

@@ -29,10 +29,12 @@ cardText = structure.story[storyIndex].block[blockIndex].text
 
 card.html = cardText
 card.style =
+    "display": "flex"
+    "align-items": "center"
     "color": "rgba(0,0,0,0.7)"
     "padding": padding*2+"px"
-    "font-size": "30px"
-    "line-height": "34px"
+    "font-size": "26px"
+    "line-height": "30px"
     "font-family": "Georgia, Times, Serif"
 	"word-wrap": "break-word"
 
@@ -95,7 +97,24 @@ card.on Events.DragEnd, ->
             blockIndex = 0
             cardText = structure.story[storyIndex].block[blockIndex].text
           	card.html = cardText
-				#card.html = "dragged X:"+card.draggable.offset.x+" Y:"+card.draggable.offset.y+"\n\n Direction: "+card.draggable.direction
+	       if card.draggable.direction == "down"
+           	cardDefault()
+            storyIndex = structure.story[storyIndex].options.bottom.destination
+            blockIndex = 0
+            cardText = structure.story[storyIndex].block[blockIndex].text
+          	card.html = cardText
+	       if card.draggable.direction == "left"
+           	cardDefault()
+            storyIndex = structure.story[storyIndex].options.left.destination
+            blockIndex = 0
+            cardText = structure.story[storyIndex].block[blockIndex].text
+          	card.html = cardText
+	       if card.draggable.direction == "right"
+           	cardDefault()
+            storyIndex = structure.story[storyIndex].options.right.destination
+            blockIndex = 0
+            cardText = structure.story[storyIndex].block[blockIndex].text
+          	card.html = cardText
 			wasDragged = false
 			
 ################################################

@@ -38,10 +38,12 @@
   card.html = cardText;
 
   card.style = {
+    "display": "flex",
+    "align-items": "center",
     "color": "rgba(0,0,0,0.7)",
     "padding": padding * 2 + "px",
-    "font-size": "30px",
-    "line-height": "34px",
+    "font-size": "26px",
+    "line-height": "30px",
     "font-family": "Georgia, Times, Serif"
   };
 
@@ -122,6 +124,27 @@
       }
       card.html = cardText;
     }
+    if (card.draggable.direction === "down") {
+      cardDefault();
+      storyIndex = structure.story[storyIndex].options.bottom.destination;
+      blockIndex = 0;
+      cardText = structure.story[storyIndex].block[blockIndex].text;
+    }
+    card.html = cardText;
+    if (card.draggable.direction === "left") {
+      cardDefault();
+      storyIndex = structure.story[storyIndex].options.left.destination;
+      blockIndex = 0;
+      cardText = structure.story[storyIndex].block[blockIndex].text;
+    }
+    card.html = cardText;
+    if (card.draggable.direction === "right") {
+      cardDefault();
+      storyIndex = structure.story[storyIndex].options.right.destination;
+      blockIndex = 0;
+      cardText = structure.story[storyIndex].block[blockIndex].text;
+    }
+    card.html = cardText;
     return wasDragged = false;
   });
 
