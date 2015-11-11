@@ -5,8 +5,8 @@ Framer.Defaults.Animation =
 padding = 10
 isCardClicked = false;
 wasDragged = false
-storyIndex = 0
-blockIndex = 0
+chapterIndex = 0
+chunkIndex = 0
 
 bg = new BackgroundLayer
   backgroundColor: "#000"
@@ -16,7 +16,7 @@ card = new Layer
 	y: 0
 	width: Screen.width #window.innerWidth
 	height: Screen.height #window.innerHeight
-	backgroundColor: "#fff"
+	backgroundColor: "#f8f8f8"
 	borderRadius: 10
 	shadowY = 2
 	shadowBlur = 4
@@ -25,7 +25,7 @@ card = new Layer
 startX = card.x
 startY = card.y
 
-cardText = structure.story[storyIndex].block[blockIndex].text
+cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
 
 card.html = cardText
 card.style =
@@ -57,29 +57,29 @@ cardDefault = () ->
 	
 card.on Events.TouchEnd, ->
 	if wasDragged == false
-		if blockIndex+1 < structure.story[storyIndex].block.length
+		if chunkIndex+1 < structure.chapter[chapterIndex].chunk.length
 			isCardClicked = false
 			card.draggable.enabled = false
-			blockIndex = blockIndex + 1
-			cardText = cardText + structure.story[storyIndex].block[blockIndex].text
+			chunkIndex = chunkIndex + 1
+			cardText = cardText + structure.chapter[chapterIndex].chunk[chunkIndex].text
 			card.html = cardText
-		else if blockIndex+1 >= structure.story[storyIndex].block.length && structure.story[storyIndex].options == undefined
-			storyIndex = storyIndex+1
-			blockIndex = 0
-			cardText = structure.story[storyIndex].block[blockIndex].text
+		else if chunkIndex+1 >= structure.chapter[chapterIndex].chunk.length && structure.chapter[chapterIndex].options == undefined
+			chapterIndex = chapterIndex+1
+			chunkIndex = 0
+			cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
 			card.html = cardText
 		else
 			card.draggable.enabled = true
 			#card.draggable.directionLock = true
 			card.states.switch("options")
 			top.states.switch("active")
-			top.html = structure.story[storyIndex].options.top.text
+			top.html = structure.chapter[chapterIndex].options.top.text
 			right.states.switch("active")
-			right.html = structure.story[storyIndex].options.right.text
+			right.html = structure.chapter[chapterIndex].options.right.text
 			bottom.states.switch("active")
-			bottom.html = structure.story[storyIndex].options.bottom.text
+			bottom.html = structure.chapter[chapterIndex].options.bottom.text
 			left.states.switch("active")
-			left.html = structure.story[storyIndex].options.left.text
+			left.html = structure.chapter[chapterIndex].options.left.text
 			isCardClicked = true
 
 card.on Events.DragMove, ->
@@ -96,27 +96,27 @@ card.on Events.DragEnd, ->
 	            	y: 0
 	       if card.draggable.direction == "up"
            	cardDefault()
-            storyIndex = structure.story[storyIndex].options.top.destination
-            blockIndex = 0
-            cardText = structure.story[storyIndex].block[blockIndex].text
+            chapterIndex = structure.chapter[chapterIndex].options.top.destination
+            chunkIndex = 0
+            cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
           	card.html = cardText
 	       if card.draggable.direction == "down"
            	cardDefault()
-            storyIndex = structure.story[storyIndex].options.bottom.destination
-            blockIndex = 0
-            cardText = structure.story[storyIndex].block[blockIndex].text
+            chapterIndex = structure.chapter[chapterIndex].options.bottom.destination
+            chunkIndex = 0
+            cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
           	card.html = cardText
 	       if card.draggable.direction == "left"
            	cardDefault()
-            storyIndex = structure.story[storyIndex].options.left.destination
-            blockIndex = 0
-            cardText = structure.story[storyIndex].block[blockIndex].text
+            chapterIndex = structure.chapter[chapterIndex].options.left.destination
+            chunkIndex = 0
+            cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
           	card.html = cardText
 	       if card.draggable.direction == "right"
            	cardDefault()
-            storyIndex = structure.story[storyIndex].options.right.destination
-            blockIndex = 0
-            cardText = structure.story[storyIndex].block[blockIndex].text
+            chapterIndex = structure.chapter[chapterIndex].options.right.destination
+            chunkIndex = 0
+            cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text
           	card.html = cardText
 			
 ################################################

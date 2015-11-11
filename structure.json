@@ -8,8 +8,8 @@ Structure
 			options
 */
 
-structure = {"story": [{
-    "block": [
+structure = {"chapter": [{
+    "chunk": [
     {"text": "1. Lorem ipsum dolor sit amet"},
     {"text": ", consectetur adipiscing elit. "},
     {"text": "Nullam "},
@@ -37,14 +37,14 @@ structure = {"story": [{
     }
   },
 {
-    "block": [
+    "chunk": [
     {"text": "2. Pellentesque efficitur varius commodo. "},
     {"text": "Pellentesque rhoncus consectetur mi at viverra. "},
     {"text": "Aliquam erat volutpat."}
     ]
   },
 {
-    "block": [
+    "chunk": [
     {"text": "3. Maecenas blandit nec ex eget suscipit. "},
     {"text": "Donec gravida faucibus quam nec suscipit. "},
     {"text": "Nulla "},
@@ -55,15 +55,15 @@ structure = {"story": [{
     ]
   },
     {
-    "block": [
+    "chunk": [
     {"text": "4. Nullam interdum orci quis. "},
     {"text": "Mi eleifend, "},
     {"text": "vel cursus eros."}
     ]
   },
 	{
-    "block": [
-    {"text": "A key:<br><img src='http://contentsmagazine.com/cards/key.jpg'>"}
+    "chunk": [
+    {"text": "A key:<br><img src='images/key.png'>"}
     ]
   },
 ]}
