@@ -1,5 +1,5 @@
 (function() {
-  var bg, bottom, card, cardDefault, cardText, chapterIndex, chunkIndex, isCardClicked, left, padding, right, shadowBlur, shadowColor, shadowY, startX, startY, top, wasDragged;
+  var bg, bottom, card, cardDefault, cardText, chapterIndex, chunkIndex, fontSizeCard, fontSizeOptions, isCardClicked, left, lineheightCard, optionStyle, padding, right, shadowBlur, shadowColor, shadowY, startX, startY, top, wasDragged;
 
   Framer.Defaults.Animation = {
     curve: "ease-in-out",
@@ -15,6 +15,12 @@
   chapterIndex = 0;
 
   chunkIndex = 0;
+
+  fontSizeCard = 26;
+
+  lineheightCard = 30;
+
+  fontSizeOptions = 16;
 
   bg = new BackgroundLayer({
     backgroundColor: "#000"
@@ -43,8 +49,8 @@
     "width": "100%",
     "color": "rgba(0,0,0,0.7)",
     "padding": padding * 2 + "px",
-    "font-size": "26px",
-    "line-height": "30px",
+    "font-size": fontSizeCard + "px",
+    "line-height": lineheightCard + "px",
     "font-family": "Georgia, Times, Serif"
   };
 
@@ -60,6 +66,8 @@
 
   card.states.add({
     front: {
+      x: 0,
+      y: 0,
       scale: 1.0
     }
   });
@@ -104,7 +112,7 @@
 
   card.on(Events.DragMove, function() {
     var offsetNumber;
-    offsetNumber = 15;
+    offsetNumber = 50;
     if (card.draggable.offset.x > offsetNumber || card.draggable.offset.x < -offsetNumber || card.draggable.offset.y > offsetNumber || card.draggable.offset.y < -offsetNumber) {
       return wasDragged = true;
     }
@@ -113,42 +121,50 @@
   card.on(Events.DragEnd, function() {
     if (wasDragged === true) {
       wasDragged = false;
-      this.animate({
-        properties: {
-          x: 0,
-          y: 0
-        }
-      });
       if (card.draggable.direction === "up") {
         cardDefault();
         chapterIndex = structure.chapter[chapterIndex].options.top.destination;
         chunkIndex = 0;
         cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
+        card.html = cardText;
       }
-      card.html = cardText;
+      if (card.draggable.direction === "down") {
+        cardDefault();
+        chapterIndex = structure.chapter[chapterIndex].options.bottom.destination;
+        chunkIndex = 0;
+        cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
+        card.html = cardText;
+      }
+      if (card.draggable.direction === "left") {
+        cardDefault();
+        chapterIndex = structure.chapter[chapterIndex].options.left.destination;
+        chunkIndex = 0;
+        cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
+        card.html = cardText;
+      }
+      if (card.draggable.direction === "right") {
+        cardDefault();
+        chapterIndex = structure.chapter[chapterIndex].options.right.destination;
+        chunkIndex = 0;
+        cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
+        return card.html = cardText;
+      }
+    } else {
+      return this.animate({
+        properties: {
+          x: 0,
+          y: 0
+        }
+      });
     }
-    if (card.draggable.direction === "down") {
-      cardDefault();
-      chapterIndex = structure.chapter[chapterIndex].options.bottom.destination;
-      chunkIndex = 0;
-      cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
-    }
-    card.html = cardText;
-    if (card.draggable.direction === "left") {
-      cardDefault();
-      chapterIndex = structure.chapter[chapterIndex].options.left.destination;
-      chunkIndex = 0;
-      cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
-    }
-    card.html = cardText;
-    if (card.draggable.direction === "right") {
-      cardDefault();
-      chapterIndex = structure.chapter[chapterIndex].options.right.destination;
-      chunkIndex = 0;
-      cardText = structure.chapter[chapterIndex].chunk[chunkIndex].text;
-    }
-    return card.html = cardText;
   });
+
+  optionStyle = {
+    "color": "rgba(255,255,255,1)",
+    "text-align": "center",
+    "font-size": fontSizeOptions + "px",
+    "font-family": "Helvetica, Arial, sans-serif"
+  };
 
   top = new Layer({
     midX: Screen.width / 2,
@@ -161,10 +177,7 @@
 
   top.html = "top answer";
 
-  top.style = {
-    "color": "rgba(255,255,255,1)",
-    "text-align": "center"
-  };
+  top.style = optionStyle;
 
   top.states.add({
     active: {
@@ -185,10 +198,7 @@
 
   right.html = "right answer";
 
-  right.style = {
-    "color": "rgba(255,255,255,1)",
-    "text-align": "center"
-  };
+  right.style = optionStyle;
 
   right.states.add({
     active: {
@@ -207,10 +217,7 @@
 
   bottom.html = "bottom answer";
 
-  bottom.style = {
-    "color": "rgba(255,255,255,1)",
-    "text-align": "center"
-  };
+  bottom.style = optionStyle;
 
   bottom.states.add({
     active: {
@@ -231,10 +238,7 @@
 
   left.html = "left answer";
 
-  left.style = {
-    "color": "rgba(255,255,255,1)",
-    "text-align": "center"
-  };
+  left.style = optionStyle;
 
   left.states.add({
     active: {

@@ -41,7 +41,25 @@ structure = {"chapter": [{
     {"text": "2. Pellentesque efficitur varius commodo. "},
     {"text": "Pellentesque rhoncus consectetur mi at viverra. "},
     {"text": "Aliquam erat volutpat."}
-    ]
+    ],
+    "options": {
+        "top": {
+            "text": "",
+            "destination": "1"
+        },
+        "right": {
+            "text": "right amet",
+            "destination": 2
+        },
+        "bottom": {
+            "text": "",
+            "destination": "1"
+        },
+        "left": {
+            "text": "left quam",
+            "destination": 3
+        }
+    }
   },
 {
     "chunk": [
@@ -64,6 +82,24 @@ structure = {"chapter": [{
 	{
     "chunk": [
     {"text": "A key:<br><img src='images/key.png'>"}
-    ]
-  },
+    ],
+    "options": {
+        "top": {
+            "text": "top ipsum",
+            "destination": 4
+        },
+        "right": {
+            "text": "right amet",
+            "destination": 1
+        },
+        "bottom": {
+            "text": "bottom dolor",
+            "destination": 2
+        },
+        "left": {
+            "text": "left quam",
+            "destination": 1
+        }
+    }
+  }
 ]}
