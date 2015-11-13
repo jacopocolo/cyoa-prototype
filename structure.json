@@ -10,95 +10,80 @@ Structure
 
 structure = {"chapter": [{
     "chunk": [
-    {"text": "1. Lorem ipsum dolor sit amet"},
-    {"text": ", consectetur adipiscing elit. "},
-    {"text": "Nullam "},
-    {"text": "scelerisque "},
-    {"text": "venenatis "},
-    {"text": "est ac efficitur?"}
+    {"text": "C’è uno strano rumore alla porta. "},
+    {"text": "Bump. "},
+    {"text": "Bump. "},
+    {"text": "Bump. <br>"}
+    ]
+  },
+{
+    "chunk": [
+    {"text": "In casa non c’è nessuno e fuori piove forte. "},
+    {"text": "Potrebbe essere il vento. "},
+    {"text": "Bump. "},
+    {"text": "Potrebbe essere qualcos’altro. "},
+    {"text": "Bump. "},
+    {"text": "<br><br>Che cosa fai?"}
     ],
     "options": {
         "top": {
-            "text": "top ipsum",
-            "destination": 4
-        },
-        "right": {
-            "text": "right amet",
+            "text": "",
             "destination": 1
         },
-        "bottom": {
-            "text": "bottom dolor",
+        "right": {
+            "text": "Vai alle scale e guardi giù",
             "destination": 2
         },
+        "bottom": {
+            "text": "",
+            "destination": 1
+        },
         "left": {
-            "text": "left quam",
+            "text": "Chiudi la porta della tua camera",
             "destination": 1
         }
     }
   },
 {
     "chunk": [
-    {"text": "2. Pellentesque efficitur varius commodo. "},
-    {"text": "Pellentesque rhoncus consectetur mi at viverra. "},
-    {"text": "Aliquam erat volutpat."}
-    ],
-    "options": {
-        "top": {
-            "text": "",
-            "destination": "1"
-        },
-        "right": {
-            "text": "right amet",
-            "destination": 2
-        },
-        "bottom": {
-            "text": "",
-            "destination": "1"
-        },
-        "left": {
-            "text": "left quam",
-            "destination": 3
-        }
-    }
-  },
-{
-    "chunk": [
-    {"text": "3. Maecenas blandit nec ex eget suscipit. "},
-    {"text": "Donec gravida faucibus quam nec suscipit. "},
-    {"text": "Nulla "},
-	{"text": "sit "},
-	{"text": "amet "},
-	{"text": "dapibus "},
-	{"text": "sapien."}
+    {"text": "Ti affacci alle scale e guardi giù. "},
+    {"text": "Dai vetri della porta non vedi nessuno. Ma… "},
+    {"text": "Bump. Bump. Bump. Il rumore continua."}
     ]
   },
     {
     "chunk": [
-    {"text": "4. Nullam interdum orci quis. "},
-    {"text": "Mi eleifend, "},
-    {"text": "vel cursus eros."}
+    {"text": "Scendi. <br>"},
+    {"text": "Bump. <br>"},
+    {"text": "Le. <br>"},
+    {"text": "Bump. <br>"},
+    {"text": "Scale. <br>"},
+    {"text": "Bump. <br>"}
     ]
   },
 	{
     "chunk": [
-    {"text": "A key:<br><img src='images/key.png'>"}
+    {"text": "Ti avvicini alla porta in punta di piedi, passando nell’ombra contro il muro. "},
+    {"text": "Fuori non c’è nessuno ma il rumore continua. "},
+    {"text": "Bump. Bump. Bump. "},
+    {"text": "<br><br>Che cosa fai? "}
     ],
     "options": {
         "top": {
-            "text": "top ipsum",
+            "text": "",
             "destination": 4
         },
         "right": {
-            "text": "right amet",
-            "destination": 1
+            "text": "Apri la porta",
+            "destination": 4
         },
         "bottom": {
-            "text": "bottom dolor",
-            "destination": 2
+            "text": "",
+            "destination": 4
         },
         "left": {
-            "text": "left quam",
-            "destination": 1
+            "text": "Controlli che la porta sia chiusa",
+            "destination": 5
         }
     }
   }

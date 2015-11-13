@@ -25,6 +25,8 @@ card = new Layer
 	shadowBlur = 4
 	shadowColor = "rgba(0,0,0,0.7)"
 
+card.index = 1000    
+
 startX = card.x
 startY = card.y
 
@@ -129,7 +131,7 @@ card.on Events.DragEnd, ->
 # OPTIONS: TOP, RIGHT, BOTTOM, LEFT 
 ################################################			
 
-optionStyle = {"color": "rgba(255,255,255,1)", "text-align": "center", "font-size": fontSizeOptions+"px", "font-family": "Helvetica, Arial, sans-serif"}
+optionStyle = {"color": "rgba(255,255,255,0.8)", "text-align": "center", "font-size": fontSizeOptions+"px", "font-family": "Helvetica, Arial, sans-serif"}
 
 top = new Layer
     midX: Screen.width/2
@@ -141,16 +143,17 @@ top = new Layer
 
 top.html = "top answer"
 top.style = optionStyle
+top.index = 1
 
 top.states.add
 	active:
 		opacity: 1.0
 
 right = new Layer
-    x: Screen.width-120
-    y: Screen.height/2
     height: 30
-    width: 200
+    width: 230
+    x: Screen.width-115-20 #-this.width/2
+    y: Screen.height/2
     opacity: 0.0
     originY: 0
     rotation: -90
@@ -158,6 +161,7 @@ right = new Layer
 
 right.html = "right answer"
 right.style = optionStyle
+right.index = 1
 
 right.states.add
     active:
@@ -173,16 +177,17 @@ bottom = new Layer
 
 bottom.html = "bottom answer"
 bottom.style = optionStyle
+bottom.index = 1
 
 bottom.states.add
 	active:
 		opacity: 1.0
 		
 left = new Layer
-    x: -100
-    y: Screen.height/2
     height: 30
-    width: 200
+    width: 230
+    x: -115 #-this.width/2
+    y: Screen.height/2
     opacity: 0.0
     originY: 0
     rotation: -90
@@ -190,6 +195,7 @@ left = new Layer
 
 left.html = "left answer"
 left.style = optionStyle
+left.index = 1
 
 left.states.add
     active:
