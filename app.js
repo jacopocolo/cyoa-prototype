@@ -1,5 +1,5 @@
 (function() {
-  var bg, bottom, card, cardDefault, cardText, chapterIndex, chunkIndex, fontSizeCard, fontSizeOptions, isCardClicked, left, lineheightCard, optionStyle, padding, right, shadowBlur, shadowColor, shadowY, startX, startY, top, wasDragged;
+  var applyStyle, bg, bottom, card, cardDefault, cardText, chapterIndex, chunkIndex, fontSizeCard, fontSizeOptions, isCardClicked, left, lineheightCard, optionStyle, padding, right, shadowBlur, shadowColor, shadowY, startX, startY, top, wasDragged;
 
   Framer.Defaults.Animation = {
     curve: "ease-in-out",
@@ -21,6 +21,12 @@
   lineheightCard = 30;
 
   fontSizeOptions = 16;
+
+  if (Utils.isPhone() === true) {
+    fontSizeCard = fontSizeCard * 2;
+    lineheightCard = lineheightCard * 2;
+    fontSizeOptions = fontSizeOptions * 2;
+  }
 
   bg = new BackgroundLayer({
     backgroundColor: "#000"
@@ -98,6 +104,9 @@
         return card.html = cardText;
       } else {
         card.draggable.enabled = true;
+        if (structure.chapter[chapterIndex].options.top.text === "") {
+          card.draggable.vertical = false;
+        }
         card.states["switch"]("options");
         top.states["switch"]("active");
         top.html = structure.chapter[chapterIndex].options.top.text;
@@ -107,6 +116,7 @@
         bottom.html = structure.chapter[chapterIndex].options.bottom.text;
         left.states["switch"]("active");
         left.html = structure.chapter[chapterIndex].options.left.text;
+        applyStyle();
         return isCardClicked = true;
       }
     }
@@ -165,7 +175,9 @@
     "color": "rgba(255,255,255,0.8)",
     "text-align": "center",
     "font-size": fontSizeOptions + "px",
-    "font-family": "Helvetica, Arial, sans-serif"
+    "font-family": "Helvetica, Arial, sans-serif",
+    "display": "flex",
+    "align-items": "center"
   };
 
   top = new Layer({
@@ -191,8 +203,8 @@
 
   right = new Layer({
     height: 30,
-    width: 230,
-    x: Screen.width - 115 - 20,
+    width: Screen.height / 1.5,
+    x: Screen.width - (Screen.height / 3) - 30,
     y: Screen.height / 2,
     opacity: 0.0,
     originY: 0,
@@ -214,7 +226,7 @@
 
   bottom = new Layer({
     midX: Screen.width / 2,
-    y: Screen.height - 20,
+    y: Screen.height - 30,
     height: 30,
     width: 200,
     opacity: 0.0,
@@ -235,8 +247,8 @@
 
   left = new Layer({
     height: 30,
-    width: 230,
-    x: -115,
+    width: Screen.height / 1.5,
+    x: -(Screen.height / 3),
     y: Screen.height / 2,
     opacity: 0.0,
     originY: 0,
@@ -248,12 +260,19 @@
 
   left.style = optionStyle;
 
-  left.index = 1;
+  left.index = 2000;
 
   left.states.add({
     active: {
       opacity: 1.0
     }
   });
+
+  applyStyle = function() {
+    top.style = optionStyle;
+    right.style = optionStyle;
+    bottom.style = optionStyle;
+    return left.style = optionStyle;
+  };
 
 }).call(this);

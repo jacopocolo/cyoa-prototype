@@ -11,6 +11,12 @@ fontSizeCard = 26
 lineheightCard = 30
 fontSizeOptions = 16
 
+#temporary workaround till i figure out how to set font size properly
+if Utils.isPhone() == true
+    fontSizeCard = fontSizeCard*2
+    lineheightCard = lineheightCard*2
+    fontSizeOptions = fontSizeOptions*2
+
 bg = new BackgroundLayer
   backgroundColor: "#000"
 
@@ -77,7 +83,8 @@ card.on Events.TouchEnd, ->
 			card.html = cardText
 		else
 			card.draggable.enabled = true
-			#card.draggable.directionLock = true
+			if structure.chapter[chapterIndex].options.top.text == ""
+        			card.draggable.vertical = false
 			card.states.switch("options")
 			top.states.switch("active")
 			top.html = structure.chapter[chapterIndex].options.top.text
@@ -87,6 +94,7 @@ card.on Events.TouchEnd, ->
 			bottom.html = structure.chapter[chapterIndex].options.bottom.text
 			left.states.switch("active")
 			left.html = structure.chapter[chapterIndex].options.left.text
+			applyStyle()
 			isCardClicked = true
 
 card.on Events.DragMove, ->
@@ -129,9 +137,8 @@ card.on Events.DragEnd, ->
 			
 ################################################
 # OPTIONS: TOP, RIGHT, BOTTOM, LEFT 
-################################################			
-
-optionStyle = {"color": "rgba(255,255,255,0.8)", "text-align": "center", "font-size": fontSizeOptions+"px", "font-family": "Helvetica, Arial, sans-serif"}
+################################################			 
+optionStyle = {"color": "rgba(255,255,255,0.8)", "text-align": "center", "font-size": fontSizeOptions+"px", "font-family": "Helvetica, Arial, sans-serif", "display": "flex", "align-items": "center"}
 
 top = new Layer
     midX: Screen.width/2
@@ -140,6 +147,7 @@ top = new Layer
     width: 200
     opacity: 0.0
     backgroundColor: "transparent"
+    
 
 top.html = "top answer"
 top.style = optionStyle
@@ -151,8 +159,8 @@ top.states.add
 
 right = new Layer
     height: 30
-    width: 230
-    x: Screen.width-115-20 #-this.width/2
+    width: Screen.height/1.5
+    x: Screen.width-(Screen.height/3)-30
     y: Screen.height/2
     opacity: 0.0
     originY: 0
@@ -169,7 +177,7 @@ right.states.add
         
 bottom = new Layer
     midX: Screen.width/2
-    y: Screen.height-20
+    y: Screen.height-30
     height: 30
     width: 200
     opacity: 0.0
@@ -185,8 +193,8 @@ bottom.states.add
 		
 left = new Layer
     height: 30
-    width: 230
-    x: -115 #-this.width/2
+    width: Screen.height/1.5
+    x: -(Screen.height/3)
     y: Screen.height/2
     opacity: 0.0
     originY: 0
@@ -195,8 +203,14 @@ left = new Layer
 
 left.html = "left answer"
 left.style = optionStyle
-left.index = 1
+left.index = 2000
 
 left.states.add
     active:
         opacity: 1.0
+        
+applyStyle = () ->
+    top.style = optionStyle
+    right.style = optionStyle
+    bottom.style = optionStyle
+    left.style = optionStyle

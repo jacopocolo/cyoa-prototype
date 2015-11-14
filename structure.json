@@ -8,83 +8,181 @@ Structure
 			options
 */
 
-structure = {"chapter": [{
-    "chunk": [
-    {"text": "C’è uno strano rumore alla porta. "},
-    {"text": "Bump. "},
-    {"text": "Bump. "},
-    {"text": "Bump. <br>"}
+structure = {
+    "chapter": [{
+            "chunk": [
+                {
+                    "text": "C’è uno strano rumore alla porta. "
+                },
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "Bump. <br>"
+                }
     ]
   },
-{
-    "chunk": [
-    {"text": "In casa non c’è nessuno e fuori piove forte. "},
-    {"text": "Potrebbe essere il vento. "},
-    {"text": "Bump. "},
-    {"text": "Potrebbe essere qualcos’altro. "},
-    {"text": "Bump. "},
-    {"text": "<br><br>Che cosa fai?"}
+        {
+            "chunk": [
+                {
+                    "text": "In casa non c’è nessuno e fuori piove forte. "
+                },
+                {
+                    "text": "Potrebbe essere il vento. "
+                },
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "Potrebbe essere qualcos’altro. "
+                },
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "<br><br>Che cosa fai?"
+                }
     ],
-    "options": {
-        "top": {
-            "text": "",
-            "destination": 1
-        },
-        "right": {
-            "text": "Vai alle scale e guardi giù",
-            "destination": 2
-        },
-        "bottom": {
-            "text": "",
-            "destination": 1
-        },
-        "left": {
-            "text": "Chiudi la porta della tua camera",
-            "destination": 1
-        }
-    }
+            "options": {
+                "top": {
+                    "text": "",
+                    "destination": 1
+                },
+                "right": {
+                    "text": "Vai alle scale e guardi giù",
+                    "destination": 2
+                },
+                "bottom": {
+                    "text": "",
+                    "destination": 1
+                },
+                "left": {
+                    "text": "Chiudi la porta della tua camera",
+                    "destination": 1
+                }
+            }
   },
-{
-    "chunk": [
-    {"text": "Ti affacci alle scale e guardi giù. "},
-    {"text": "Dai vetri della porta non vedi nessuno. Ma… "},
-    {"text": "Bump. Bump. Bump. Il rumore continua."}
+        {
+            "chunk": [
+                {
+                    "text": "Ti affacci alle scale e guardi giù. "
+                },
+                {
+                    "text": "Dai vetri della porta non vedi nessuno. Ma… "
+                },
+                {
+                    "text": "Bump. Bump. Bump. Il rumore continua."
+                }
     ]
   },
-    {
-    "chunk": [
-    {"text": "Scendi. <br>"},
-    {"text": "Bump. <br>"},
-    {"text": "Le. <br>"},
-    {"text": "Bump. <br>"},
-    {"text": "Scale. <br>"},
-    {"text": "Bump. <br>"}
+        {
+            "chunk": [
+                {
+                    "text": "Scendi. <br>"
+                },
+                {
+                    "text": "Bump. <br>"
+                },
+                {
+                    "text": "Le. <br>"
+                },
+                {
+                    "text": "Bump. <br>"
+                },
+                {
+                    "text": "Scale. <br>"
+                },
+                {
+                    "text": "Bump. <br>"
+                }
     ]
   },
-	{
-    "chunk": [
-    {"text": "Ti avvicini alla porta in punta di piedi, passando nell’ombra contro il muro. "},
-    {"text": "Fuori non c’è nessuno ma il rumore continua. "},
-    {"text": "Bump. Bump. Bump. "},
-    {"text": "<br><br>Che cosa fai? "}
+        {
+            "chunk": [
+                {
+                    "text": "Ti avvicini alla porta in punta di piedi, passando nell’ombra contro il muro. "
+                },
+                {
+                    "text": "Fuori non c’è nessuno ma il rumore continua. "
+                },
+                {
+                    "text": "Bump. Bump. Bump. "
+                },
+                {
+                    "text": "<br><br>Che cosa fai? "
+                }
     ],
-    "options": {
-        "top": {
-            "text": "",
-            "destination": 4
-        },
-        "right": {
-            "text": "Apri la porta",
-            "destination": 4
-        },
-        "bottom": {
-            "text": "",
-            "destination": 4
-        },
-        "left": {
-            "text": "Controlli che la porta sia chiusa",
-            "destination": 5
-        }
-    }
+            "options": {
+                "top": {
+                    "text": "",
+                    "destination": 4
+                },
+                "right": {
+                    "text": "Apri la porta",
+                    "destination": 5
+                },
+                "bottom": {
+                    "text": "",
+                    "destination": 4
+                },
+                "left": {
+                    "text": "Controlli che la porta sia chiusa",
+                    "destination": 4
+                }
+            }
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Apri la porta piano piano. "
+                },
+                {
+                    "text": "Sullo zerbino c’è una lettera tutta sporca e coperta di fango. "
+                },
+                {
+                    "text": "Il vento la faceva sbattere contro la porta. "
+                },
+                {
+                    "text": "<br><br>Che cosa fai? "
+                }
+    ],
+            "options": {
+                "top": {
+                    "text": "",
+                    "destination": 5
+                },
+                "right": {
+                    "text": "La prendo",
+                    "destination": 6
+                },
+                "bottom": {
+                    "text": "",
+                    "destination": 5
+                },
+                "left": {
+                    "text": "Chiudo la porta",
+                    "destination": 5
+                }
+            }
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Prendi la lettera e ti chiudi la porta alle spalle. "
+                },
+                {
+                    "text": "Stai per metterla insieme alle altre. "
+                },
+                {
+                    "text": "Poi ti accorgi di una cosa. "
+                },
+                {
+                    "text": "La lettera è per te."
+                }
+    ]
   }
-]}
+]
+}
