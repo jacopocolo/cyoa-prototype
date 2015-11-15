@@ -61,7 +61,7 @@ structure = {
                 },
                 "left": {
                     "text": "Chiudi la porta della tua camera",
-                    "destination": 1
+                    "destination": 8
                 }
             }
   },
@@ -130,7 +130,7 @@ structure = {
                 },
                 "left": {
                     "text": "Controlli che la porta sia chiusa",
-                    "destination": 4
+                    "destination": 14
                 }
             }
   },
@@ -140,10 +140,10 @@ structure = {
                     "text": "Apri la porta piano piano. "
                 },
                 {
-                    "text": "Sullo zerbino c’è una lettera tutta sporca e coperta di fango. "
+                    "text": "Sullo zerbino c’è una lettera tutta sporca di fango. "
                 },
                 {
-                    "text": "Il vento la faceva sbattere contro la porta. "
+                    "text": "Il vento la faceva sbattere. "
                 },
                 {
                     "text": "<br><br>Che cosa fai? "
@@ -180,9 +180,225 @@ structure = {
                     "text": "Poi ti accorgi di una cosa. "
                 },
                 {
-                    "text": "La lettera è per te."
+                    "text": "<br><br>La lettera è per te."
                 }
     ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Il tuo indirizzo è scritto a mano. "
+                },
+                {
+                    "text": "Sul retro c’è un grosso sigillo rosso che chiude la lettera. "
+                },
+                {
+                    "text": "Sopra, al posto del mittente c’è solo una parola:"
+                },
+                {
+                    "text": "<br><br>Hogwarts."
+                }
+    ],
+            "end": true
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Chiudi la porta e dopo qualche secondo il rumore smette. "
+                },
+                {
+                    "text": "<br>Forse era davvero solo il vento. "
+                },
+                {
+                    "text": "<br>Era quasi sicuramente solo il vento."
+                },
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "<br>Sobbalzi così forte che ribalti una pila di libri giù dal tavolo. "
+                },
+                {
+                    "text": "<br>Bump. "
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Appoggi l’orecchio sulla porta di camera. "
+                },
+                {
+                    "text": "Bump. "
+                },
+                {
+                    "text": "Il rumore non sembra più venire dall’ingresso. "
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Bump. Bump. Bump. "
+                },
+                {
+                    "text": "Ora il rumore viene da molto più vicino. "
+                },
+                {
+                    "text": "Un’ombra si muove."
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Ti giri tremando "
+                },
+                {
+                    "text": "ma non c’è nessun mostro. "
+                },
+                {
+                    "text": "Solo un pezzo di carta che sbatte contro la tua finestra. "
+                },
+                {
+                    "text": "Bump. Bump. Bump."
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Ti avvicini per guardare meglio. "
+                },
+                {
+                    "text": "Non è un pezzo di carta, è una lettera. "
+                },
+                {
+                    "text": "<br>E sopra c’è il tuo nome. "
+                },
+                {
+                    "text": "<br><br>Che cosa fai?"
+                }
+    ],
+            "options": {
+                "top": {
+                    "text": "",
+                    "destination": 5
+                },
+                "right": {
+                    "text": "Apro la finestra e la prendo",
+                    "destination": 7
+                },
+                "bottom": {
+                    "text": "",
+                    "destination": 5
+                },
+                "left": {
+                    "text": "La lascio lì",
+                    "destination": 16
+                }
+            }
+  },
+        {
+            "chunk": [
+                {
+                    "text": "La porta è chiusa a chiave. "
+                },
+                {
+                    "text": "Ma tu fai comunque un secondo giro. "
+                },
+                {
+                    "text": "Clack, clack. "
+                },
+                {
+                    "text": "Dopo qualche secondo il rumore smette."
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Risali le scale col cuore che sobbalza. "
+                },
+                {
+                    "text": "Era solo il vento, ti ripeti. "
+                },
+                {
+                    "text": "Rientri in camera e chiudi anche questa porta. "
+                },
+    ],
+            "goto": 9
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Non fai neanche in tempo a pensarlo che un secondo dopo a fianco della prima lettera ne arriva una seconda. "
+                },
+                {
+                    "text": "E poi una terza. "
+                },
+                {
+                    "text": "E poi una quarta. "
+                },
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Le lettere diventano dieci. "
+                },
+                {
+                    "text": "Venti. "
+                },
+                {
+                    "text": "Cento. "
+                },
+                {
+                    "text": "Fino a coprire l’intera finestra. "
+                },
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Ti giri spaventato per andare di sotto. "
+                },
+                {
+                    "text": "E la stessa lettera è sulla tua scrivania. "
+                },
+                {
+                    "text": "La prendi in mano. "
+                }
+    ],
+            "goto": 7
+  },
+        {
+            "chunk": [
+                {
+                    "text": "È solo una lettera portata dal vento, "
+                },
+                {
+                    "text": "probabilmente una pubblicità, "
+                },
+                {
+                    "text": "pensi tornando in camera. "
+                }
+    ]
+  },
+        {
+            "chunk": [
+                {
+                    "text": "Cerchi di calmarti ma non riesci a non pensare che ci sia qualcosa di strano. "
+                },
+                {
+                    "text": "Ti chiudi in camera. "
+                }
+    ],
+            "goto": 9
   }
 ]
 }
